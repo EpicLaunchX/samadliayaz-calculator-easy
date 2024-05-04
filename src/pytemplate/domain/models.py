@@ -7,5 +7,5 @@ class Operands:
     second_operand: int
 
 
-def operands_factory(first_operand: int, second_operand: int):
+def operands_factory(first_operand: int, second_operand: int) -> Operands:
     return Operands(first_operand, second_operand)
