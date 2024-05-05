@@ -12,10 +12,11 @@ def main():
         op2 = int(op2)
         if operand is None:
             raise ValueError(f"Unsupported operand type: {op_name}")
-    except ValueError:
+    except ValueError as v_e:
         raise ValueError(
             "Please enter two integer and one string operand (add, subtract, "
-            "multiply or divide) by comma seperated. e.g.: 45, 35, add. ")
+            "multiply or divide) by comma seperated. e.g.: 45, 35, add. ") \
+                from v_e
     return operand(operands_factory(op1, op2))
 
 
