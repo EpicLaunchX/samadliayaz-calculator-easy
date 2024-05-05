@@ -1,9 +1,8 @@
 from pytemplate.domain.models import operands_factory
 from pytemplate.service.calculator import Calculator
-from typing import Optional
 
 
-def main() -> Optional[int]:
+def main() -> int:
     calculator = Calculator()
     try:
         op1, op2, op_name = input().split(',')
