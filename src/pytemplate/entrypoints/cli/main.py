@@ -1,8 +1,10 @@
+from typing import Optional
+
 from pytemplate.domain.models import operands_factory
 from pytemplate.service.calculator import Calculator
 
 
-def main() -> int:
+def main() -> Optional[int]:
     calculator = Calculator()
     try:
         op1, op2, op_name = input().split(',')
@@ -12,11 +14,12 @@ def main() -> int:
         op2 = int(op2)
         if operand is None:
             raise ValueError(f"Unsupported operand type: {op_name}")
-    except ValueError as v_e:
-        raise ValueError(
+    except ValueError:
+        print(
             "Please enter two integer and one string operand (add, subtract, "
             "multiply or divide) by comma seperated. e.g.: 45, 35, add. "
-        ) from v_e
+        )
+        return None
     return operand(operands_factory(op1, op2))
 
 
