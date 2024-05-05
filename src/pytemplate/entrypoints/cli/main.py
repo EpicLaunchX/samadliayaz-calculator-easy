@@ -15,8 +15,8 @@ def main():
     except ValueError as v_e:
         raise ValueError(
             "Please enter two integer and one string operand (add, subtract, "
-            "multiply or divide) by comma seperated. e.g.: 45, 35, add. ") \
-                from v_e
+            "multiply or divide) by comma seperated. e.g.: 45, 35, add. "
+            ) from v_e
     return operand(operands_factory(op1, op2))
 
 
