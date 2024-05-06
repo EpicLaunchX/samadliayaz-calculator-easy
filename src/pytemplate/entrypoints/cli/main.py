@@ -16,10 +16,12 @@ def main() -> Optional[int]:
             raise ValueError(f"Unsupported operand type: {op_name}")
     except ValueError:
         print(
-            "Please enter two integer and one string operand (add, subtract, " "multiply or divide) by comma seperated. e.g.: 45, 35, add. "
+            "Please enter two integer and one string operand (add, subtract, " "multiply or divide) by comma seperated. e.g.: 45, 35, add."
         )
         return None
-    return operand(operands_factory(op1, op2))
+    else:
+        result = operand(operands_factory(op1, op2))
+        print(result)
 
 
 if __name__ == "__main__":
