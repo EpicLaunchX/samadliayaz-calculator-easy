@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pytemplate.domain.models import operands_factory
 from pytemplate.service.calculator import Calculator
 
@@ -7,7 +5,9 @@ from pytemplate.service.calculator import Calculator
 def main() -> None:
     calculator = Calculator()
     try:
-        first_operand, second_operand, operand_name = input().split(",")
+        first_operand = int(input())
+        second_operand = int(input())
+        operand_name = input()
         operand = getattr(calculator, operand_name.strip(), None)
 
         first_operand = int(first_operand)
@@ -18,7 +18,6 @@ def main() -> None:
         print(
             "Please enter two integer and one string operand (add, subtract, " "multiply or divide) by comma seperated. e.g.: 45, 35, add."
         )
-        return None
     else:
         result = operand(operands_factory(first_operand, second_operand))
         print(result)
