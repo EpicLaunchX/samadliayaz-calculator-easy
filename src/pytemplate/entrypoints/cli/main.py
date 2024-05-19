@@ -5,9 +5,9 @@ from pytemplate.service.calculator import Calculator
 def main() -> None:
     calculator = Calculator()
     try:
-        first_operand = int(input())
-        second_operand = int(input())
-        operand_name = input()
+        first_operand = int(input("Enter first operand"))
+        second_operand = int(input("Enter second operant"))
+        operand_name = input("Enter operand name")
         operand = getattr(calculator, operand_name.strip(), None)
 
         first_operand = int(first_operand)
